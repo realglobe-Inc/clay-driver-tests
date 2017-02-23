@@ -1,0 +1,10 @@
+Cases
+---------
+
+Available Test Cases
+
+| Signature | Description |
+| ---- | ----------- |
+{{#each vars.cases}}
+| `{{{name}}}({{#each params}}{{name}}{{#if @last}}{{else}}, {{/if}}{{/each}}){{#if returns}} -> {{{returns.type}}}{{/if}}` | {{{description}}} |
+{{/each}}
