@@ -1,0 +1,19 @@
+/**
+ * Bud file for test
+ */
+'use strict'
+
+const { snakecase } = require('stringcase')
+const { DriverSpec } = require('clay-constants')
+const { REQUIRED_METHODS } = DriverSpec
+
+module.exports = REQUIRED_METHODS.split(',').map((name) => ({
+  force: false,
+  mode: '644',
+  path: `test_${snakecase(name)}.js`,
+  data: { name }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

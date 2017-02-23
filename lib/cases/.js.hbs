@@ -1,0 +1,20 @@
+/**
+ * Test {{name}} method of driver
+ * @function test{{pascalcase name}}
+ * @function run
+ * @param {Driver} driver - Driver to test
+ * @param {Object} [options={}] - Optional settings
+ * @throws {Error} Test fail error
+ */
+'use strict'
+
+const co = require('co')
+
+/** @lends test{{pascalcase name}} */
+function test{{pascalcase name}} (driver, options = {}) {
+  const RESOURCE_NAME = 'driver-test-{{spinalcase name}}'
+  return co(function * () {
+  })
+}
+
+module.exports = test{{pascalcase name}}
