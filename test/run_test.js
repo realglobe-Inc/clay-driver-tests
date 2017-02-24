@@ -6,6 +6,7 @@
 
 const run = require('../lib/run.js')
 const assert = require('assert')
+const clayDriverMemory = require('clay-driver-memory')
 const co = require('co')
 
 describe('run', function () {
@@ -20,7 +21,8 @@ describe('run', function () {
   }))
 
   it('Run', () => co(function * () {
-
+    let driver = clayDriverMemory()
+    yield run(driver)
   }))
 })
 
