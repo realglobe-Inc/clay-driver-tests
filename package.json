@@ -30,6 +30,8 @@
     "colorprint": "^4.1.0"
   },
   "devDependencies": {
+    "ababel": "^2.0.1",
+    "ababel-es2015": "^2.0.1",
     "aglob": "^2.0.1",
     "amocha": "^2.0.0",
     "ape-doc": "^2.0.4",
