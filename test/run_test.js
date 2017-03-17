@@ -30,8 +30,10 @@ describe('run', function () {
   it('Sqlite', () => co(function * () {
     let filename = `${__dirname}/../tmp/sqlite-testing.db`
     rimraf.sync(filename)
-    let driver = clayDriverSqlite(filename)
-    yield run(driver)
+    for (let i = 0; i < 3; i++) {
+      let driver = clayDriverSqlite(filename)
+      yield run(driver)
+    }
   }))
 })
 
