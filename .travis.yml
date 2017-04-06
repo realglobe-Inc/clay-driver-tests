@@ -2,13 +2,9 @@ language: node_js
 node_js:
 - '6'
 before_install:
-# TODO OSS
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+- npm i npm-cli-login -g
+- npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+- npm who
 install:
 - npm install
 script:
@@ -18,4 +14,4 @@ script:
 after_success:
 - ./ci/travis/publish.js
 env:
-  secure: "vxDSODWS6z0T6md+hJJCpUrCyJjqd/dsJZBgCiyOtAeN/h6ZahNujE/sHz2QROYTaTOguW3uE9PM5uluBNwtAyh+EkFl4MQrwmv8SE9GVMjPLWhMFidZ0J3NUoIjBsXK/nbpcTyrPvb4TLnniDwB4khwPu3kF0KFb421FftKIfmfrqyf316Hvm5XTdUMrKudYmxjrVUxF3jtAutFrku1lk7jXY/S8w3I8aeZbL190PD7n+QSOW80aab1/XFp4nAwcEaHH77OmKcZXaSMZD1ZgzOQ356s0KLdGUhRloVcdLWE+zPXQX6+wTEvxRPKZPH+wUIlKbOJ8DJ1TYA/gLc0UgwLt4WegtLLeiPEeLZZBHn6WOdsVlCQnoAqgpPFo9bWiWgRlqOx3e+O4AVECF+DKvxZ/f7tIH7iJddsS5TClyTehG3K94N8RnupHSm14ZFCHUDgQw3uuUqm9Mxl2Cx4dzyoS2OG4NBDESQk7THJsG3+vrzXDSVmQW03eCZVtSrZsRJlryyKxBlzlimaXlC3sOMM+s5s4whBZX82SxiBn47zjEH8kOe0MQm6lOl3wP+hIXvw/xqRxIleunN9ZtDgKnGyHrLE/zjVBveMyH9XVIrDf+zfSLcoeLC6NXm4sNuMUyX6VflfV6M38Xx4qBM5N4AaAPb16v/JYIOTfeWSQnk="
+  secure: "e/LrTOmOzGZ8jpr7Wbh5mLTdiFla5SyPOxM8dl6Rt0ZjFirvDwCfh7W/DMvQ5y70u+FDdukQrFbFWTJXiRNpOGENlTR7L35jZeKt5tu2pzfiVTn9Lo1hraj73Jp7j/lZ09/zVu9jX+kfadVj6OMV4bazn8d8T3l9+wb2Bb0OnT7fXSe7Zw8LKbwHoCtJJeYuYY3QYQKsEW5Mi8h9eW3UrmzWW8EemvzMhYpUZNpwu4/Ynr24EU1C1cy591px3LpcTR+zBqOArsuidjc33gWor7cZkkGhDdgU+35y5PfvDKnjgis6J/d+qM+7pUEIHEOtPuHVqwvTXGJ1wZRJJF491Z5M46CRaIVys4NEl4C0QfA8Zwb3A3kOQoISsw5IBkTBi7zDD4sybo8crCQR/W9q9PaiZM5iSY+sJU2hn/OAExng+PxQ4RH6sa1SjlH+TQLJ4HrnWDSJPHKYbFDcMK6tgbEzUT6QrcUS3hWqIfAIlEELLEBHGQzslophEO9tf71uajTQQ5t9FA2xjQrkrg+wT5LUwoVLXX2ZCytQ8OAq/A+CvtGlUgvEetpE5rerYWEiy5ohpqHvliO4Ewd0mItg6UKNgORBFtLb5lcv0d4s2Ke0LCGeXJh1ATMzCF8FRm/9YDzJC5lEzzGmfRTg+ZopmACcoMh7OjPaZ1jxAkWsQqg="
