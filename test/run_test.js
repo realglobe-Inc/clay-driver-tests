@@ -8,7 +8,6 @@ const run = require('../lib/run.js')
 const assert = require('assert')
 const rimraf = require('rimraf')
 const clayDriverMemory = require('clay-driver-memory')
-const clayDriverSqlite = require('clay-driver-sqlite')
 const co = require('co')
 
 describe('run', function () {
@@ -27,14 +26,6 @@ describe('run', function () {
     yield run(driver)
   }))
 
-  it('Sqlite', () => co(function * () {
-    let filename = `${__dirname}/../tmp/sqlite-testing.db`
-    rimraf.sync(filename)
-    for (let i = 0; i < 3; i++) {
-      let driver = clayDriverSqlite(filename)
-      yield run(driver)
-    }
-  }))
 })
 
 /* global describe, before, after, it */
